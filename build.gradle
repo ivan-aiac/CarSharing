@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+group = 'aiac'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven { url "https://packages.jetbrains.team/maven/p/hyperskill-hs-test/maven" }
+    maven { url "https://jitpack.io" }
+}
+
+dependencies {
+    implementation group: 'com.h2database', name: 'h2', version: '1.4.200'
+    testImplementation 'com.github.hyperskill:hs-test:release-SNAPSHOT'
+}
+
+test {
+    systemProperty "file.encoding", "utf-8"
+    outputs.upToDateWhen { false }
+}
